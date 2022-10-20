@@ -1,0 +1,10 @@
+package DataDrivenframe;
+
+public class ReadingdatafromExcel 
+{
+	public static void main(String sri[]) 
+	{
+		FileInputStream file=new FileInputStream("C://sairamjava//datareading.xlsx");
+	}
+
+}

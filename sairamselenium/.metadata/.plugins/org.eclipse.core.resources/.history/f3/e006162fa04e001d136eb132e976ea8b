@@ -1,0 +1,33 @@
+package DataDrivenframe;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadingdatafromExcel 
+{
+	public static  void main(String sri[]) throws IOException 
+	{
+		FileInputStream file=new FileInputStream("C://sairamjava//datareading.xlsx");
+		
+		XSSFWorkbook workbook = new XSSFWorkbook(file);
+		
+		XSSFSheet sheet=workbook.getSheet("data"); //providing sheet name
+						
+		//XSSFSheet sheet=workbook.getSheetAt(0); //providing index number of sheet
+		
+		int rowcount = sheet.getLastRowNum(); //returns the row count
+		
+		int coloumncount = sheet.getRow(0).getFirstCellNum(); //return column / cell count
+		
+		for(int i=0;i<rowcount;i++)
+		{
+			sheet.getRow(i); //focus on current row
+		}
+		
+	}
+
+}

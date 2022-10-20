@@ -1,0 +1,13 @@
+package DataDrivenframe;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class ReadingdatafromExcel 
+{
+	public static void main(String sri[]) throws FileNotFoundException 
+	{
+		FileInputStream file=new FileInputStream("C://sairamjava//datareading.xlsx");
+	}
+
+}

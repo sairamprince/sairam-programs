@@ -1,0 +1,69 @@
+package actionsclass;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Drad_drop {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		//get URL
+		driver.get("http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");
+		System.out.println(driver.getTitle());
+		
+		//united states - washington
+		WebElement source=driver.findElement(By.id("box3"));
+		WebElement target=driver.findElement(By.id("box103"));
+		
+		Actions action=new Actions(driver);
+		action.clickAndHold(source).moveToElement(target).release().build().perform();
+							//(or)
+		//action.dragAndDrop(source,target).build().perform();
+		Thread.sleep(2000);
+		//norway to oslo
+		WebElement source1=driver.findElement(By.id("box1"));
+		WebElement target1=driver.findElement(By.id("box101"));
+		action.clickAndHold(source1).moveToElement(target1).release().build().perform();
+		
+		Thread.sleep(2000);
+		//seoul - south korea
+		WebElement source2=driver.findElement(By.id("box5"));
+		WebElement target2=driver.findElement(By.id("box105"));
+		action.clickAndHold(source2).moveToElement(target2).release().build().perform();
+		Thread.sleep(2000);
+		
+		//rome - italy
+		WebElement source3=driver.findElement(By.id("box6"));
+		WebElement target3=driver.findElement(By.id("box106"));
+		action.clickAndHold(source3).moveToElement(target3).release().build().perform();
+		Thread.sleep(2000);
+		
+		//stockholm - sweden
+		WebElement source4=driver.findElement(By.id("box2"));
+		WebElement target4=driver.findElement(By.id("box102"));
+		action.clickAndHold(source4).moveToElement(target4).release().build().perform();
+		Thread.sleep(2000);
+		
+		//madrid - spain
+		WebElement source5=driver.findElement(By.id("box7"));
+		WebElement target5=driver.findElement(By.id("box107"));
+		action.clickAndHold(source5).moveToElement(target5).release().build().perform();
+		Thread.sleep(2000);
+		
+		//chopenhagen - denmark
+		WebElement source6=driver.findElement(By.id("box4"));
+		WebElement target6=driver.findElement(By.id("box104"));
+		action.clickAndHold(source6).moveToElement(target6).release().build().perform();
+		
+		
+		}
+
+}

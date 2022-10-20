@@ -1,0 +1,13 @@
+package DataDrivenframe;
+
+import org.testng.annotations.Test;
+
+public class Login {
+
+	@Test
+	public void testlogin()
+	{
+		
+	}
+	
+}
