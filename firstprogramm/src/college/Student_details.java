@@ -24,6 +24,4 @@ public class Student_details
 	}
 }
 
-/*sdfg
- * dfghj
- * sdfg*/
+
