@@ -22,9 +22,8 @@ public class Calender_handling {
 		
 		//select on the year
 		Thread.sleep(2000);
-		Select year=new Select(driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select")));
-		Thread.sleep(2000);
-		year.selectByValue("2005");
+		Select year=new Select(driver.findElement(By.xpath("//*[@class=\"react-datepicker__year-select\"]")));
+		year.selectByValue("2000");
 		
 		//select month
 		Select month=new Select(driver.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select")));

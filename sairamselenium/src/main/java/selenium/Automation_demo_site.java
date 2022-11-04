@@ -1,15 +1,26 @@
 package selenium;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import graphql.Assert;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Automation_demo_site {
 
+	private static Select selectObject;
+
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 */
 	public static void main(String[] args) throws InterruptedException 
 	{
 		WebDriverManager.chromedriver().setup();
@@ -43,12 +54,27 @@ public class Automation_demo_site {
 		driver.findElement(By.id("checkbox1")).click();
 		driver.findElement(By.id("checkbox2")).click();
 		driver.findElement(By.id("checkbox3")).isSelected();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		//languages
-		/*Select lang=new Select (driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[7]/div")));
-		lang.selectByVisibleText("English");
-		System.out.println(lang.getFirstSelectedOption());*/
-		Thread.sleep(2000);
+		
+		// Locating select tag web element
+				WebElement multiSelectTagDropdownWebElement= driver.findElement(By.xpath("//*[@id=\"msdd\"]"));
+				// Passing select tag web element to Select class constructor to get a Select class object
+				Select selectObject= new Select(multiSelectTagDropdownWebElement);
+				
+		List<WebElement> allOptions=selectObject.getOptions();
+		System.out.println("All options are printed below:");
+		for(WebElement option: allOptions)
+		{
+			String value= option.getText();
+			System.out.println(value);
+		}
+		
+		// selecting English and Arabic from multi select drop-down
+		
+		selectObject.selectByIndex(1);
+		selectObject.selectByValue("English");
+       
 		//skills
 		Select skill=new Select(driver.findElement(By.id("Skills")));
 		skill.selectByVisibleText("CSS");

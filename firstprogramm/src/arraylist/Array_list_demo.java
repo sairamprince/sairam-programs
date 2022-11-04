@@ -27,7 +27,8 @@ public class Array_list_demo {
 		
 		list.remove(1);
 		System.out.println(list.size());
-		System.out.println("after removing the element--> "+list); //2
+		System.out.println("after removing the element--> "+list); 
+		
 		
 		//inserting a new element in array list
 		
